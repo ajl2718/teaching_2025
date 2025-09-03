@@ -1,0 +1,87 @@
+﻿# Data Dictionary: Extubation Dataset,,,
+,,,
+## Patient Demographics and Administrative Data,,,
+ Variable , Description , Data Type , Example Value 
+----------,-------------,------------,---------------
+ subject_id , Unique identifier for each patient , Integer ,12
+ icustay_id , Unique identifier for each ICU stay , Integer ,13
+ icustay_los , Length of stay in the ICU , Numeric ,10994
+ admission_type_descr , Type of hospital admission , Categorical ," ELECTIVE, EMERGENCY "
+ marital_status_descr , Patient's marital status , Categorical ," MARRIED, SINGLE, WIDOWED "
+ ethnicity_descr , Patient's ethnic background , Categorical ," WHITE, ASIAN, HISPANIC OR LATINO "
+ religion_descr , Patient's religious affiliation , Categorical ," JEWISH, CATHOLIC, PROTESTANT "
+ sex , Patient's biological sex , Categorical ," M, F "
+ dob , Date of birth , Date , Format: DD/MM/YYYY 
+ dod , Date of death (if applicable) , Date , Format: DD/MM/YYYY 
+ hospital_expire_flg , Flag indicating if patient died in hospital , Categorical ," Y, N "
+ age , Patient's age at admission , Integer , Range: 29-92 
+ overall_payor_group_descr , Insurance/payment type , Categorical ," MEDICARE, MEDICAID, PRIVATE "
+,,,
+## Intubation and Extubation Data,,,
+ Variable , Description , Data Type , Example Value 
+----------,-------------,------------,---------------
+ first_intub_time , Time of first intubation , DateTime , Format: DD/MM/YYYY HH:MM 
+ last_intub_time , Time of last intubation , DateTime , Format: DD/MM/YYYY HH:MM 
+ extub_time , Time of extubation , DateTime , Format: DD/MM/YYYY HH:MM 
+ fail_ext_status_bin , Binary outcome of extubation , Categorical ," ""Successful extubation"", ""Failed extubation"" "
+ fail_ext_status , Detailed outcome status , Categorical ," ""Successful extubation"", ""Failed extubation"", ""Death"" "
+ ext_status_bin_num , Numeric encoding of extubation status , Binary ," 0 (Success), 1 (Failure) "
+ ext_status_time , Time of status determination , DateTime , Format: DD/MM/YYYY HH:MM 
+ 6hrs_prior_extub , 6 hours before extubation timestamp , DateTime , Format: DD/MM/YYYY HH:MM 
+ time_elapsed_seconds , Time elapsed in seconds , Integer , Range: 2460-2722560 
+,,,
+## Clinical Measurements and Scores,,,
+ Variable , Description , Data Type , Example Value 
+----------,-------------,------------,---------------
+ elixhauser_score , Comorbidity index , Integer , Range: 0-7 
+ mean_Heart Rate , Average heart rate , Numeric , Range: ~60-120 bpm 
+ mean_Respiratory Rate , Average respiratory rate , Numeric , Range: ~12-30 breaths/min 
+ mean_FiO2 Set , Average fraction of inspired oxygen , Numeric , Range: 0.35-1.0 
+ FiO2_Set , Set fraction of inspired oxygen , Numeric , Range: 0.4-1.0 
+ Tidal Volume (Obser) , Observed tidal volume , Integer , Range: ~400-800 mL 
+ PaO2 , Partial pressure of arterial oxygen , Numeric , Range: ~80-450 mmHg 
+ PaCO2 , Partial pressure of arterial carbon dioxide , Numeric , Range: ~35-90 mmHg 
+ hgb , Hemoglobin level , Numeric , Range: ~8-16 g/dL 
+ Arterial BP Mean , Mean arterial blood pressure , Integer , Range: ~40-120 mmHg 
+ Albumin (>3.2) , Albumin level , Numeric , Range: ~1.3-4.4 g/dL 
+ Arterial pH , Arterial blood pH , Numeric , Range: 7.12-7.58 
+ Creatinine (0-1.3) , Creatinine level , Numeric , Range: 0.3-5.4 mg/dL 
+ WBC , White blood cell count , Numeric , Range: ~6-67 K/µL 
+ Respiratory SOFA Score , Sequential Organ Failure Assessment for respiratory system , Integer , Range: 0-4 
+ Overall SOFA Score , Total Sequential Organ Failure Assessment score , Integer , Range: 1-20 
+first_heart_rate, First heart rate recorded during ICU stay, Numeric , Range: ~60-120 bpm 
+ first_resp_rate , First respiratory rate recorded during ICU stay, Numeric , Range: ~12-30 breaths/min 
+,,,
+## Comorbidity Indicators (Binary: 0/1),,,
+ Variable , Description ,,
+----------,-------------,,
+ congestive_heart_failure , Presence of congestive heart failure ,,
+ cardiac_arrhythmias , Presence of cardiac arrhythmias ,,
+ valvular_disease , Presence of valvular heart disease ,,
+ pulmonary_circulation , Pulmonary circulation disorders ,,
+ peripheral_vascular , Peripheral vascular disease ,,
+ hypertension , Presence of hypertension ,,
+ paralysis , Presence of paralysis ,,
+ other_neurological , Other neurological disorders ,,
+ chronic_pulmonary , Chronic pulmonary disease ,,
+ diabetes_uncomplicated , Uncomplicated diabetes ,,
+ diabetes_complicated , Diabetes with complications ,,
+ hypothyroidism , Presence of hypothyroidism ,,
+ renal_failure , Presence of renal failure ,,
+ liver_disease , Presence of liver disease ,,
+ peptic_ulcer , Presence of peptic ulcer ,,
+ aids , Presence of AIDS/HIV ,,
+ lymphoma , Presence of lymphoma ,,
+ metastatic_cancer , Presence of metastatic cancer ,,
+ solid_tumor , Presence of solid tumor ,,
+ rheumatoid_arthritis , Presence of rheumatoid arthritis ,,
+ coagulopathy , Presence of coagulopathy ,,
+ obesity , Presence of obesity ,,
+ weight_loss , Presence of weight loss ,,
+ fluid_electrolyte , Fluid and electrolyte disorders ,,
+ blood_loss_anemia , Blood loss anemia ,,
+ deficiency_anemias , Deficiency anemias ,,
+ alcohol_abuse , History of alcohol abuse ,,
+ drug_abuse , History of drug abuse ,,
+ psychoses , Presence of psychoses ,,
+ depression , Presence of depression ,,
